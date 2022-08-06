@@ -32,16 +32,20 @@ function uncolorDiv(e) {
   e.target.classList.remove('painted');
 }
 
-function removeDivs(e) {
+function removeDivs() {
   for (const div of document.querySelectorAll('.container > div')) {
     container.removeChild(div);
   }
 }
 
-function restart(e) {
-  console.log(e);
+function restart() {
+  let rows;
+  while (true) {
+    rows = +prompt('Number of rows');
+    if (rows <= 100 && rows > 0) break;
+  }
   removeDivs();
-  createDivs(35);
+  createDivs(rows);
   main();
 }
 
