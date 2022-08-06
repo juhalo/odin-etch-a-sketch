@@ -1,17 +1,21 @@
-let rows = 16;
 const container = document.querySelector('.container');
-for (let i = 0; i < rows * rows; i++) {
-  const newDiv = document.createElement('div');
-  newDiv.style.border = '1px solid'; //For testing; remove later
-  container.appendChild(newDiv);
-}
-console.log(rows); // For testing; remove later
-container.style.cssText = `grid-template-columns: repeat(${rows}, 1fr);`;
 
 function main() {
   const divList = document.querySelectorAll('.container > div');
+  const button = document.querySelector('button');
   divList.forEach((div) => div.addEventListener('mouseenter', colorDiv));
   document.addEventListener('click', uncolorDiv);
+  button.addEventListener('click', restart);
+}
+
+function createDivs(rowNum) {
+  for (let i = 0; i < rowNum * rowNum; i++) {
+    const newDiv = document.createElement('div');
+    newDiv.style.border = '1px solid'; //For testing; remove later
+    container.appendChild(newDiv);
+  }
+  console.log(rowNum); // For testing; remove later
+  container.style.cssText = `grid-template-columns: repeat(${rowNum}, 1fr);`;
 }
 
 function colorDiv(e) {
@@ -28,4 +32,18 @@ function uncolorDiv(e) {
   e.target.classList.remove('painted');
 }
 
+function removeDivs(e) {
+  for (const div of document.querySelectorAll('.container > div')) {
+    container.removeChild(div);
+  }
+}
+
+function restart(e) {
+  console.log(e);
+  removeDivs();
+  createDivs(35);
+  main();
+}
+
+createDivs(16);
 main();
