@@ -11,10 +11,8 @@ function main() {
 function createDivs(rowNum) {
   for (let i = 0; i < rowNum * rowNum; i++) {
     const newDiv = document.createElement('div');
-    newDiv.style.border = '1px solid'; //For testing; remove later
     container.appendChild(newDiv);
   }
-  console.log(rowNum); // For testing; remove later
   container.style.cssText = `grid-template-columns: repeat(${rowNum}, 1fr);`;
 }
 

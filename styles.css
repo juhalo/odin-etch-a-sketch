@@ -17,15 +17,10 @@ body {
   background-color: black;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-}
-
 button {
   margin: 0 auto;
   width: 100px;
   padding: 3px;
+  margin: 5px;
   border-radius: 10px;
 }
