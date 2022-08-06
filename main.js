@@ -16,7 +16,11 @@ function main() {
 
 function colorDiv(e) {
   if (!e.shiftKey) {
-    e.target.classList.add('painted');
+    if (e.ctrlKey) {
+      e.target.classList.remove('painted');
+    } else {
+      e.target.classList.add('painted');
+    }
   }
 }
 
