@@ -1,0 +1,12 @@
+.container {
+  width: 99vh;
+  height: 99vh;
+  display: grid;
+  margin: 0 auto;
+  border: 3px solid;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
