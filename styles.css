@@ -1,12 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  width: 99vh;
-  height: 99vh;
+  width: 90vh;
+  height: 90vh;
   display: grid;
   margin: 0 auto;
   border: 3px solid;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.painted {
+  background-color: black;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+}
+
+button {
+  margin: 0 auto;
+  width: 100px;
 }
